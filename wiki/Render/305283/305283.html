@@ -1,0 +1,157 @@
+<div class="wikidoc"><h1>Conditions</h1>
+<h2>Explanation</h2>(Skip to the next section if you just want to see some examples)<br /><br />Conditions, the logic statements such as those used in an SQL where clause, are a complex matter. Sea Quail&#39;s goal is to represent complex logic statements using OO conventions while allowing their construction in a concise and readable form. I will try to lay out here a nice explanation of Sea Quail&#39;s (possibly) unintuitive approach.<br /><br />Take the following conditional statement:<br /><br /><div style="color:Black;background-color:White;"><pre>
+    <span style="color:Blue;">NOT</span>(ManufacturerCountry = <span style="color:#A31515;">&#39;China&#39;</span>)
+    <span style="color:Blue;">OR</span> (HatType = <span style="color:#A31515;">&#39;Sombrero&#39;</span> <span style="color:Blue;">AND</span> BrimSize &gt;= 80<span style="color:Green;">/*inches*/</span>) 
+    <span style="color:Blue;">OR</span> (HatType = <span style="color:#A31515;">&#39;Baseball&#39;</span> <span style="color:Blue;">AND</span> Resizeable = 1
+         <span style="color:Blue;">AND</span> (Color = <span style="color:#A31515;">&#39;Brown&#39;</span> <span style="color:Blue;">OR</span> Color = <span style="color:#A31515;">&#39;Gray&#39;</span>))
+</pre></div><br />Supposing this is in the where clause of an SQL statement selecting hats, it would mean-- show me all hat inventory not made in china, but make exceptions for 80&quot; sombreros and resizeable, brown or gray baseball hats. (If I could find an eighty inch sombrero, I wouldn&#39;t care where it was made.)<br /><br />When deconstructing this, what I believe are the components (from most to least granular):
+<ol><li>Operands, such as HatType, &#39;Sombrero&#39;, BrimSize, 80; Relational Operators =, &gt;, et cetera; Connective Operators AND, OR; Value Inversion operator NOT</li>
+<li>Conditions consisting of two operands and a relational operator (HatType = &#39;Sombrero&#39;), resulting in true or false when evaluated. </li>
+<li>Conditions consisting of other conditions (the parenthetical groupings). Their value is determined by evaluating their child conditions. </li></ol>
+<br />The rules of the logic statement:
+<ul><li>Each condition, by virtue of one connective, may be followed by one other condition. I have decided that each connected condition (as well as the connective) should be said to belong to its preceding condition. I do not consider two connected conditions to be siblings. However, I&#39;d like to discuss the idea further. Leave a comment if you have an opinion on this, please. </li>
+<li>Each condition may have its evaluated value inverted (true becomes false).</li></ul>
+<br />Given these components and rules, I propose the following as the model for conditions.<br /><br /><u>Base Condition</u><br /><b>Has A</b> Value Inversion directive<br /><b>Has A</b> Connective Logic Operator<br /><b>Has A</b> Base Condition<br /><br /><u>Condition Group</u><br /><b>Is A</b> Base Condition<br /><b>Has A</b> Inner Base Condition <br /><br /><u>Condition</u><br /><b>Is A</b> Base Condition<br /><b>Has A</b> Left Operand<br /><b>Has A</b> Right Operand<br /><b>Has A</b> Relational Operator<br />
+<h2>Examples</h2>
+<h3>One condition</h3>To get things rolling, here&#39;s quick sample of a parameterized select *, with one simple condition in the where clause.<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">string</span> varHatType = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;HatType&quot;</span>);
+SQSelect <span style="color:Blue;">select</span> = <span style="color:Blue;">new</span> SQSelect()
+{
+    PrimaryTable = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Hat&quot;</span>),
+    Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;HatType&quot;</span>, RelationOperators.Equal, varHatType)
+};
+<span style="color:Blue;">select</span>.Columns.Add(<span style="color:#A31515;">&quot;*&quot;</span>);
+<span style="color:Blue;">select</span>.Parameters.Add(varHatType, <span style="color:#A31515;">&quot;Sombrero&quot;</span>);
+
+<span style="color:Green;">/* The SQL for this in SQL Server would be:
+SELECT
+    *
+FROM Hat
+WHERE (HatType = @HatType)
+*/</span>
+</pre></div><br />From the example, you can see that the SQCondition class provides a constructor accepting the first, the relational operator, and the second operand. <br /><br />Notice that to add a condition to the SQSelect a single condition property is set. Query objects do not have a list of conditions as might be expected. Instead, support for multiple query conditions is provided by virtue of the condition model as discussed above. To create a query(or join) with multiple conditions, a subsequent condition is set as a property on the query&#39;s root condition, and to that second condition, another condition may be trailed. Conditions are chained one to the next, to the next. <br />
+<h3>Multiple conditions</h3>Adding another condition:<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">string</span> varHatType = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;HatType&quot;</span>);
+<span style="color:Blue;">string</span> varBrimSize = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;BrimSize&quot;</span>);
+SQSelect <span style="color:Blue;">select</span> = <span style="color:Blue;">new</span> SQSelect()
+{
+    PrimaryTable = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Hat&quot;</span>),
+    Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;HatType&quot;</span>, RelationOperators.Equal, varHatType)
+        .And(<span style="color:#A31515;">&quot;BrimSize&quot;</span>, RelationOperators.GreaterThanOrEqual, varBrimSize)
+};
+<span style="color:Blue;">select</span>.Columns.Add(<span style="color:#A31515;">&quot;*&quot;</span>);
+<span style="color:Blue;">select</span>.Parameters.Add(varHatType, <span style="color:#A31515;">&quot;Sombrero&quot;</span>);
+<span style="color:Blue;">select</span>.Parameters.Add(varBrimSize, 80);
+
+<span style="color:Green;">/* The SQL for this in SQL Server would be:
+SELECT
+    *
+FROM Hat
+WHERE (HatType = @HatType) AND (BrimSize = @BrimSize)
+*/</span>
+</pre></div><br />This demonstrates the overload for the &quot;And&quot; method in which the passed parameters are used to create a new SQCondition. &quot;And&quot; and &quot;Or&quot; methods are a part of every condition via the SQCondtionBase. The And and Or methods append the passed/created condition to the end of the chain of conditions, set the connective operator of the last condition in the chain, and return the first condition in the chain of conditions. Skip down to Nested Conditions if you don&#39;t care for more explanation.<br /><br />It will help in understanding what happens when the And method is called, by looking at a portion of the class definition for the SQConditionBase<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> SQConditionBase
+{
+    <span style="color:Gray;">///</span> <span style="color:Gray;">&lt;summary&gt;</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> The And or Or logic operator</span>
+    <span style="color:Gray;">///</span> <span style="color:Gray;">&lt;/summary&gt;</span>
+    <span style="color:Blue;">public</span> LogicOperators Connective { <span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>; }
+    <span style="color:Gray;">///</span> <span style="color:Gray;">&lt;summary&gt;</span>
+    <span style="color:Gray;">///</span><span style="color:Green;"> The subsequent condition</span>
+    <span style="color:Gray;">///</span> <span style="color:Gray;">&lt;/summary&gt;</span>
+    <span style="color:Blue;">public</span> SQConditionBase NextCondition { <span style="color:Blue;">get</span>; <span style="color:Blue;">set</span>; }
+
+    <span style="color:Blue;">public</span> SQConditionBase And(<span style="color:Blue;">string</span> operandA, RelationOperators op, <span style="color:Blue;">string</span> operandB)
+    {
+        AppendCondition(<span style="color:Blue;">new</span> SQCondition(operandA, op, operandB), LogicOperators.AND);
+        <span style="color:Green;">// return the condition from which this And was called, so that And can be called</span>
+        <span style="color:Green;">// from it again, only the second time, as you can see, the new condition will be</span>
+        <span style="color:Green;">// set as the subsequent condition to the condition first new condition. um, how</span>
+        <span style="color:Green;">// about like this: </span>
+        <span style="color:Green;">// conditions: (A) is the current condition on which And is called; (B) is the condition</span>
+        <span style="color:Green;">// created the first time And is called; (C) is the condition that is created the second</span>
+        <span style="color:Green;">// time. </span>
+        <span style="color:Green;">// A.And(B) = B becomes the next condition to A. A is returned</span>
+        <span style="color:Green;">// A.And(C) = C becomes the next condition to B. A is returned</span>
+        <span style="color:Blue;">return</span> <span style="color:Blue;">this</span>;
+    }
+
+    <span style="color:Blue;">private</span> <span style="color:Blue;">void</span> AppendCondition(SQConditionBase condition, LogicOperators connective)
+    {
+        <span style="color:Green;">// If a subsequent condition has not been set yet, then the passed condition will </span>
+        <span style="color:Green;">// become this condition&#39;s subsequent condition and the passed connective will</span>
+        <span style="color:Green;">// be adopted</span>
+        <span style="color:Blue;">if</span> (NextCondition == <span style="color:Blue;">null</span>)
+        {
+            NextCondition = condition;
+            Connective = connective;
+        }
+        <span style="color:Green;">// If this condition already has a condition following it, then descend into that </span>
+        <span style="color:Green;">// condition and try to append the passed condition to it</span>
+        <span style="color:Blue;">else</span>
+        {
+            NextCondition.AppendCondition(condition, connective);
+        }
+    }
+}
+</pre></div><br />I&#39;m not sure if this method of connecting conditions is the best way; I chose to do it this way mainly for the sake of readability and brevity. I&#39;m open to suggestions.<br /><br />That covers condition chaining or &quot;multiple conditions.&quot; However, simply chaining conditions will not allow for a where clause as complex as the one in the explanation at the beginning. To add more dimensions to a condition statement, a condition would need to be nested within another.<br />
+<h3>Nested Conditions</h3>
+Here&#39;s how the entire condition from the explanation might be constructed for Sea Quail.<br /><br /><div style="color:Black;background-color:White;"><pre>
+    <span style="color:Blue;">NOT</span>(ManufacturerCountry = <span style="color:#A31515;">&#39;China&#39;</span>)
+    <span style="color:Blue;">OR</span> (HatType = <span style="color:#A31515;">&#39;Sombrero&#39;</span> <span style="color:Blue;">AND</span> BrimSize &gt;= 80<span style="color:Green;">/*inches*/</span>) 
+    <span style="color:Blue;">OR</span> (HatType = <span style="color:#A31515;">&#39;Baseball&#39;</span> <span style="color:Blue;">AND</span> Resizeable = 1
+         <span style="color:Blue;">AND</span> (Color = <span style="color:#A31515;">&#39;Brown&#39;</span> <span style="color:Blue;">OR</span> Color = <span style="color:#A31515;">&#39;Gray&#39;</span>))
+</pre></div><div style="color:Black;background-color:White;"><pre>
+<span style="color:Green;">// Create variables for the parameters</span>
+<span style="color:Blue;">string</span> varCountry = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;Country&quot;</span>);
+<span style="color:Blue;">string</span> varHatType1 = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;HatType1&quot;</span>);
+<span style="color:Blue;">string</span> varBrimSize = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;BrimSize&quot;</span>);
+<span style="color:Blue;">string</span> varHatType2 = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;HatType2&quot;</span>);
+<span style="color:Blue;">string</span> varResizeable = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;Resizeable&quot;</span>);
+<span style="color:Blue;">string</span> varColor1 = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;Color1&quot;</span>);
+<span style="color:Blue;">string</span> varColor2 = Adapter.Instance.CreateVariable(<span style="color:#A31515;">&quot;Color2&quot;</span>);
+
+<span style="color:Green;">// Set up the select statement</span>
+SQSelect <span style="color:Blue;">select</span> = <span style="color:Blue;">new</span> SQSelect()
+{
+    PrimaryTable = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Hat&quot;</span>),
+    <span style="color:Green;">// NOT(ManufacturerCountry = &#39;China&#39;)</span>
+    Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;ManufacturerCountry&quot;</span>, RelationOperators.Equal, varCountry, <span style="color:Blue;">true</span>)
+        <span style="color:Green;">// OR (HatType = &#39;Sombrero&#39;</span>
+        .Or(<span style="color:Blue;">new</span> SQConditionGroup(<span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;HatType&quot;</span>, RelationOperators.Equal, varHatType1)
+             <span style="color:Green;">// AND BrimSize &gt;= 80/*inches*/) </span>
+            .And(<span style="color:#A31515;">&quot;BrimSize&quot;</span>, RelationOperators.GreaterThanOrEqual, varBrimSize)))
+        <span style="color:Green;">// OR (HatType = &#39;Baseball&#39; </span>
+        .Or(<span style="color:Blue;">new</span> SQConditionGroup(<span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;HatType&quot;</span>, RelationOperators.Equal, varHatType2)
+            <span style="color:Green;">// AND Resizeable = 1</span>
+            .And(<span style="color:#A31515;">&quot;Resizeable&quot;</span>, RelationOperators.Equal, varResizeable)
+            <span style="color:Green;">// AND (Color = &#39;Brown&#39;</span>
+            .And(<span style="color:Blue;">new</span> SQConditionGroup(<span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;Color&quot;</span>, RelationOperators.Equal, varColor1)
+                <span style="color:Green;">//  OR Color = &#39;Gray&#39;))</span>
+                .Or(<span style="color:#A31515;">&quot;Color&quot;</span>, RelationOperators.Equal, varColor1))))
+};
+<span style="color:Blue;">select</span>.Columns.Add(<span style="color:#A31515;">&quot;*&quot;</span>);
+
+<span style="color:Green;">// Adding variables and their values to the parameters</span>
+<span style="color:Blue;">select</span>.Parameters.Add(varCountry, <span style="color:#A31515;">&quot;China&quot;</span>);
+<span style="color:Blue;">select</span>.Parameters.Add(varHatType1, <span style="color:#A31515;">&quot;Sombrero&quot;</span>);
+<span style="color:Blue;">select</span>.Parameters.Add(varBrimSize, 80);
+<span style="color:Blue;">select</span>.Parameters.Add(varHatType2, <span style="color:#A31515;">&quot;Baseball&quot;</span>);
+<span style="color:Blue;">select</span>.Parameters.Add(varResizeable, <span style="color:Blue;">true</span>);
+<span style="color:Blue;">select</span>.Parameters.Add(varColor1, <span style="color:#A31515;">&quot;Brown&quot;</span>);
+<span style="color:Blue;">select</span>.Parameters.Add(varColor2, <span style="color:#A31515;">&quot;Gray&quot;</span>);
+
+<span style="color:Green;">/* The SQL for this in SQL Server would be:
+SELECT
+    *
+FROM Hat
+WHERE 
+    NOT(ManufacturerCountry = @Country)
+    OR (HatType = @HatType1 
+        AND BrimSize &gt;= @BrimSize) 
+    OR (HatType = @HatType2 
+        AND Resizeable = @Resizeable
+        AND (Color = @Color1 
+            OR Color = @Color2))
+*/</span>
+</pre></div><br />In the example, SQConditionGroup&#39;s constructor sets the passed condition to the group&#39;s &quot;InnerCondition&quot; property. Another thing to note is that passing &quot;true&quot; in the fourth parameter of the constructor for the ManufacturerCountry condition is what causes the &quot;NOT&quot; to show up in the result. True, in this case, means &quot;yes, invert the meaning of the condition.&quot;</div><div class="ClearBoth"></div>

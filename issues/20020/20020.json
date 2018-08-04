@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n    It doesn't seem possible to create multiple relationships from a column on a table as when you try to create the second relationship the first is removed.\n\nFor example if I had the tables Address, PurchaseOrder and Invoice and wanted to create a relationship from Address.AddressID  to PurchaseOrder.AddressID, this works but when I try to create the relationship from Address.AddressID to Invoice.AddressID the first relationship is deleted.and only the second remains.\n\nCould you let me know if it's possible to do what I'm trying to do.",
+    "LastUpdatedDate": "2014-01-15T09:15:46.86-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2013-07-31T05:23:07.863-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Multiple relationships from one column",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 20020
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

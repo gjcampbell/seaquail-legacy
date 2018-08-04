@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1027165",
+    "ThreadId": "439493",
+    "Html": "Is there way to add the auto_increment keyword to a column definition?<br />\n",
+    "PostedDate": "2013-04-08T05:30:09.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360441",
+    "ThreadId": "439493",
+    "Html": "Check the &quot;identity&quot; flag on the field.<br />\n",
+    "PostedDate": "2015-03-06T08:47:45.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4ACEBF11-A7BB-44CD-A6C2-6CBC9EE1A834}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeaQuail</RootNamespace>
+    <AssemblyName>SeaQuail</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SeaQuail.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Enumerations.cs" />
+    <Compile Include="Data\IWriteSQL.cs" />
+    <Compile Include="Data\SQCustomSQL.cs" />
+    <Compile Include="Data\SQFromClause.cs" />
+    <Compile Include="Data\SQFromItem.cs" />
+    <Compile Include="Data\SQFromTable.cs" />
+    <Compile Include="Data\SQFromTableList.cs" />
+    <Compile Include="Data\SQInsertFromQuery.cs" />
+    <Compile Include="Data\SQParameterList.cs" />
+    <Compile Include="Data\SQQueryColumn.cs" />
+    <Compile Include="Data\SQSortColumn.cs" />
+    <Compile Include="Data\SQTransaction.cs" />
+    <Compile Include="ExtendableList.cs" />
+    <Compile Include="IDBExecutor.cs" />
+    <Compile Include="ISQLWriter.cs" />
+    <Compile Include="SchemaQuery\SQAddColumn.cs" />
+    <Compile Include="SchemaQuery\SQAddForeignKey.cs" />
+    <Compile Include="SchemaQuery\SQAddIndex.cs" />
+    <Compile Include="SchemaQuery\SQCreateTable.cs" />
+    <Compile Include="SchemaQuery\SQInsertColumn.cs" />
+    <Compile Include="SchemaQuery\SQRemoveColumn.cs" />
+    <Compile Include="SchemaQuery\SQRemoveForeignKey.cs" />
+    <Compile Include="SchemaQuery\SQRemoveIndex.cs" />
+    <Compile Include="SchemaQuery\SQRemoveTable.cs" />
+    <Compile Include="SchemaQuery\SQRenameColumn.cs" />
+    <Compile Include="SchemaQuery\SQRenameTable.cs" />
+    <Compile Include="SchemaQuery\SQSchemaQueryBase.cs" />
+    <Compile Include="Schema\SQColumnList.cs" />
+    <Compile Include="Schema\SQForeignKey.cs" />
+    <Compile Include="Schema\SQIndex.cs" />
+    <Compile Include="SQAdapter.cs" />
+    <Compile Include="Data\SQAliasableObject.cs" />
+    <Compile Include="Data\SQCondition.cs" />
+    <Compile Include="Data\SQConditionBase.cs" />
+    <Compile Include="Data\SQConditionGroup.cs" />
+    <Compile Include="Data\SQDeleteQuery.cs" />
+    <Compile Include="Data\SQInsertQuery.cs" />
+    <Compile Include="Data\SQJoin.cs" />
+    <Compile Include="Data\SQParameter.cs" />
+    <Compile Include="Data\SQQueryBase.cs">
+    </Compile>
+    <Compile Include="Data\SQSelectQuery.cs" />
+    <Compile Include="Data\SQSetQuery.cs" />
+    <Compile Include="Data\SQUpdateQuery.cs" />
+    <Compile Include="Data\SQVariable.cs" />
+    <Compile Include="Schema\SQColumn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema\SQTable.cs" />
+    <Compile Include="SQSelectResult.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

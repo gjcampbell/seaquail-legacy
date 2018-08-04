@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "New feature to be able to import DDL from a SQL script from the supported databases",
+    "LastUpdatedDate": "2014-02-17T09:54:28.89-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2012-07-05T07:57:16.683-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Reverse engineering by import SQL script",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 18312
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I personally would love to be able to \"Load SQL (MySQL innoDB)\" or heck even better be able to give it a odbc:// connect and have the program load the DDL so I can check / validate my Foreign Key mappings visually.\r\n\r\nThanks,\nJeff M.",
+      "PostedDate": "2013-05-01T22:36:42.07-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-01T22:36:49.923-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-02-17T09:54:05.21-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "This would be really good eather connect and download a live copy of all tables or just accept an SQL script",
+      "PostedDate": "2014-02-17T09:54:28.89-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

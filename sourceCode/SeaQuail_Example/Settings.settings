@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SeaQuail_Example" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SQLServerConn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">data source=KILGORETROUT-PC\SQLEXPRESS;initial catalog=DocMngr;Trusted_Connection=True;</Value>
+    </Setting>
+    <Setting Name="MySQLConn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=localhost;Database=test;Uid=root;Pwd=root;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

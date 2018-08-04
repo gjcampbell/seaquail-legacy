@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1006963",
+    "ThreadId": "434553",
+    "Html": "I have been very impressed with this tool.  The only question I have is where does it store my diagrams when I am using the &quot;Chrome Store&quot; client?  Is it storing it on my local machine?   If not, what is the limit as to the number of diagrams that can be stored?  Is it possible to store them on my Google Drive?\r<br />\n<br />\nThanks,\r<br />\nJeff Bradley<br />\n",
+    "PostedDate": "2013-02-26T07:00:36.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1007963",
+    "ThreadId": "434553",
+    "Html": "Jeff,\r\n<div><br>\r\n</div>\r\n<div>Diagrams are stored in a database on the server that hosts the app. There's no limit on the number or size of the diagrams that can be stored right now, and I don't anticipate limiting the space any time soon. Local storage for offline editing has been\r\n requested. Storage on google drive seems like a good idea too.</div>\r\n<div><br>\r\n</div>\r\n<div>Thanks,</div>\r\n<div>Gabriel<br>\r\n<br>\r\n<div>On Tue, Feb 26, 2013 at 9:00 AM, JeffreyBradley <span dir=\"ltr\">&lt;<a href=\"mailto:notifications@codeplex.com\" target=\"_blank\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: JeffreyBradley</p>\r\n<div>I have been very impressed with this tool. The only question I have is where does it store my diagrams when I am using the &quot;Chrome Store&quot; client? Is it storing it on my local machine? If not, what is the limit as to the number of diagrams that can be stored?\r\n Is it possible to store them on my Google Drive? <br>\r\n<br>\r\nThanks, <br>\r\nJeff Bradley<br>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://seaquail.codeplex.com/discussions/434553#post1006963\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:seaquail@discussions.codeplex.com?subject=[seaquail:434553]\" target=\"_blank\">seaquail@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:seaquail@discussions.codeplex.com\" target=\"_blank\">\r\nseaquail@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://seaquail.codeplex.com/subscriptions/thread/project/edit\" target=\"_blank\">\r\nunsubscribe or change your settings</a> on codePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at\r\n<a href=\"http://codeplex.com\" target=\"_blank\">codeplex.com</a></p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n</div>\r\n",
+    "PostedDate": "2013-02-27T19:23:35.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

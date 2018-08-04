@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "585940",
+    "ThreadId": "251080",
+    "Html": "<p>Hi, first of all thank you for making this tool available .</p>\n<p>I tried today, and I like it, I usually used ERWIN data model, but is expensive, heavy, and not in the cloud .</p>\n<p>&nbsp;</p>\n<p>I know this was released only a few days ago, &nbsp; but i found some bugs or errors, and i will like to report them, ( the script code generated, doesn't work directly,</p>\n<p>comments // need to be in the format /* */ for example, &nbsp;and when MULTIPLE PRIMARY KEY is used, the syntax is incorrect .</p>\n<p>and also have some suggestions. &nbsp;like Reverse engineering, print the diagram, AUTO organize, option on Script code generation,&nbsp;</p>\n<p>as include, drop tables, Storage Engine type, Share the diagram</p>\n<p>IMPORTANT, THE CHROME APP, ALLOWS USERS TO SAVE THE DIAGRAM,</p>\n<p>but WHEN I TRIED TO OPEN A DIAGRAM&lt; DOESNT SHOW THE DIAGRAM SAVED A COUPLE OF HOURS AGO, SO I LOOSE SOME COUPLE OF HOURS OF WORK, &nbsp; i guess i should be fixed soon, or no one is going to put 2 starts on the app. &nbsp;:)</p>\n<p>cheers</p>\n<p>Eze</p>",
+    "PostedDate": "2011-03-24T12:02:15.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586081",
+    "ThreadId": "251080",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://seaquail.codeplex.com/workitem/15568\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2011-03-24T15:25:04.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586087",
+    "ThreadId": "251080",
+    "Html": "<p>Thanks, these are good suggestions. I've identified a bug thanks to the information you provided. Also, I believe I've found your diagram, and I'll get it back up for you.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Gabriel</p>",
+    "PostedDate": "2011-03-24T15:32:18.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "889715",
+    "ThreadId": "251080",
+    "Html": "<p>Looks like no discussion in a while. &nbsp;Just downloaded the extension and it's great! &nbsp;Is there a way to specify \"myISAM\" instead of InnoDB in mySQL generate script?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2012-07-24T07:39:49.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "in SeaQuail_DiagramTool solution in references there is a MSBDataSlave, which depends on MSBDataSlave project, but in source code package is missing this project or library.",
+    "LastUpdatedDate": "2013-04-21T12:30:56.313-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2011-07-05T23:46:39.603-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "There no MSBDataSlave project in solution",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 16217
+  },
+  "FileAttachments": [
+    {
+      "FileId": 6937,
+      "FileName": "MISSING.png",
+      "DownloadUrl": ".\\6937"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "MSBDataSlave is committed. ",
+      "PostedDate": "2011-07-06T04:49:16.543-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:46:37.38-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-04-21T12:30:53.493-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hello there are missing some files in MSBDataSlave\r\n\r\nSource file 'Data\\ORMChildJoinHint.cs' could not be found  seaquail-94877\\MSBDataSlave\\CSC\tMSBDataSlave\r\n\r\nSource file 'Data\\ORMCondSQL.cs' could not be found\t seaquail-94877\\MSBDataSlave\\CSC\tMSBDataSlave\r\n\r\nSource file 'Data\\PropertyInfoExtensions.cs' could not be found  seaquail-94877\\MSBDataSlave\\CSC\tMSBDataSlave\n",
+      "PostedDate": "2013-04-21T12:30:56.313-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

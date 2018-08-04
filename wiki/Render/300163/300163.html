@@ -1,0 +1,88 @@
+<div class="wikidoc"><h1>Joins</h1>
+<h2>Explanation</h2>
+Like <a href="https://seaquail.codeplex.com/wikipage?title=Conditions&referringTitle=Joins">Conditions</a>, joining tables in a query is done by adding one root join to the query, then linking one onto that, and the next onto the second, and so on. In other words, a query does not have a list of joins, but a single join, and each join may have one join. Joins also have one condition. That doesn&#39;t mean that only one condition is allowed per join, but that an SQJoin object has one SQConditionBase property. So, any number of conditions can be applied to the join, by way of condition chaining and nesting.<br /><br />We&#39;ll use this schema for the example:<br /><br /><u><b>Artist</b></u><br /><table><tr><th> Column </th><th> Type </td><td> Note </td></tr>
+<tr><td> ID </td><td> int </td><td> primary key </td></tr>
+<tr><td> Name </td><td> string </td><td> </td></tr></table><br /><br /><u><b>Album</b></u><br /><table><tr><th> Column </th><th> Type </td><td> Note </td></tr>
+<tr><td> ID </td><td> int </td><td> primary key </td></tr>
+<tr><td> ArtistID </td><td> int </td><td> Foreign key: Artist.ID</td></tr>
+<tr><td> Name </td><td> string </td><td> </td></tr>
+<tr><td> Year </td><td> int </td><td> </td></tr></table><br /><br /><u><b>Song</b></u><br /><table><tr><th> Column </th><th> Type </td><td> Note </td></tr>
+<tr><td> AlbumID </td><td> int </td><td> Foreign key: Album.ID </td></tr>
+<tr><td> Name </td><td> string </td><td> </td></tr>
+<tr><td> Track </td><td> int </td><td> </td></tr></table><br /><br />In this example, we&#39;ll select the artist, album, and song name for all songs.<br /><br /><div style="color:Black;background-color:White;"><pre>
+SQSelectQuery <span style="color:Blue;">select</span> = <span style="color:Blue;">new</span> SQSelectQuery()
+{
+    PrimaryTable = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Song&quot;</span>),
+    Join = <span style="color:Blue;">new</span> SQJoin()
+    {
+        JoinObject = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Album&quot;</span>),
+        JoinType = JoinTypes.Left,
+        Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;Song.AlbumID&quot;</span>, RelationOperators.Equal, <span style="color:#A31515;">&quot;Album.ID&quot;</span>),
+        NextJoin = <span style="color:Blue;">new</span> SQJoin()
+        {
+            JoinObject = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Artist&quot;</span>),
+            JoinType = JoinTypes.Left,
+            Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;Album.ArtistID&quot;</span>, RelationOperators.Equal, <span style="color:#A31515;">&quot;Artist.ID&quot;</span>)
+        }
+    }
+};
+<span style="color:Blue;">select</span>.Columns.AddRange(<span style="color:Blue;">new</span> SQAliasableObject[] 
+{
+    <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Artist.Name&quot;</span>),
+    <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Album.Name&quot;</span>),
+    <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Song.Name&quot;</span>)
+});
+</pre></div><br />Set the object being joined, the type of join (left, right, or inner), the join predicate, and if needed, trail one join off of another by setting the next join.<br /><br />Here&#39;s another example. This is from the GetTable method in the SeaQuail_MySQL.MySQLAdapter class. GetTable is passed the name of a table, and returns an SQTable object and its columns fully populated.<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">public</span> <span style="color:Blue;">override</span> SQTable GetTable(<span style="color:Blue;">string</span> name)
+{
+    <span style="color:Blue;">string</span> varTable = CreateVariable(<span style="color:#A31515;">&quot;Table&quot;</span>);
+    <span style="color:Blue;">string</span> varPK = CreateVariable(<span style="color:#A31515;">&quot;PK&quot;</span>);
+    SQSelectQuery q = <span style="color:Blue;">new</span> SQSelectQuery();
+    q.Columns.AddRange(<span style="color:Blue;">new</span> List&lt;SQAliasableObject&gt;
+    {
+        <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;cols.COLUMN_NAME&quot;</span>),
+        <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;IS_NULLABLE&quot;</span>),
+        <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;DATA_TYPE&quot;</span>),
+        <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;CHARACTER_MAXIMUM_LENGTH&quot;</span>),
+        <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;NUMERIC_PRECISION&quot;</span>),
+        <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;NUMERIC_SCALE&quot;</span>),
+        <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;EXTRA&quot;</span>, <span style="color:#A31515;">&quot;IS_IDENTITY&quot;</span>),
+        <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;CONSTRAINT_TYPE&quot;</span>)
+    });
+    q.PrimaryTable = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;INFORMATION_SCHEMA.COLUMNS&quot;</span>, <span style="color:#A31515;">&quot;cols&quot;</span>);
+    q.Join = <span style="color:Blue;">new</span> SQJoin()
+    {
+        JoinType = JoinTypes.Left,
+        JoinObject = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;INFORMATION_SCHEMA.KEY_COLUMN_USAGE&quot;</span>, <span style="color:#A31515;">&quot;tuse&quot;</span>),
+        Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;tuse.COLUMN_NAME&quot;</span>, RelationOperators.Equal, <span style="color:#A31515;">&quot;cols.COLUMN_NAME&quot;</span>)
+            .And(<span style="color:#A31515;">&quot;tuse.TABLE_NAME&quot;</span>, RelationOperators.Equal, <span style="color:#A31515;">&quot;cols.TABLE_NAME&quot;</span>),
+        NextJoin = <span style="color:Blue;">new</span> SQJoin()
+        {
+            JoinType = JoinTypes.Left,
+            JoinObject = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;INFORMATION_SCHEMA.TABLE_CONSTRAINTS&quot;</span>, <span style="color:#A31515;">&quot;tcons&quot;</span>),
+            Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;tcons.CONSTRAINT_NAME&quot;</span>, RelationOperators.Equal, <span style="color:#A31515;">&quot;tuse.CONSTRAINT_NAME&quot;</span>)
+                .And(<span style="color:#A31515;">&quot;tcons.TABLE_NAME&quot;</span>, RelationOperators.Equal, <span style="color:#A31515;">&quot;cols.TABLE_NAME&quot;</span>)
+                .And(<span style="color:#A31515;">&quot;tcons.CONSTRAINT_TYPE&quot;</span>, RelationOperators.Equal, varPK)
+        }
+    };
+    q.Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;cols.TABLE_NAME&quot;</span>, RelationOperators.Equal, varTable);
+    q.Parameters.Add(<span style="color:Blue;">new</span> SQParameter(varTable, name));
+    q.Parameters.Add(<span style="color:Blue;">new</span> SQParameter(varPK, <span style="color:#A31515;">&quot;PRIMARY KEY&quot;</span>));
+ ...
+</pre></div>The resulting SQL is below.<br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">SELECT</span>
+    cols.COLUMN_NAME
+    ,IS_NULLABLE
+    ,DATA_TYPE
+    ,CHARACTER_MAXIMUM_LENGTH
+    ,NUMERIC_PRECISION
+    ,NUMERIC_SCALE
+    ,<span style="color:Blue;">COLUMNPROPERTY</span>(<span style="color:Blue;">OBJECT_ID</span>(@Table), cols.COLUMN_NAME, <span style="color:#A31515;">&#39;IsIdentity&#39;</span>) [IS_IDENTITY]
+    ,CONSTRAINT_TYPE
+<span style="color:Blue;">FROM</span> INFORMATION_SCHEMA.COLUMNS cols
+    <span style="color:Blue;">Left</span> <span style="color:Blue;">JOIN</span> INFORMATION_SCHEMA.KEY_COLUMN_USAGE <span style="color:Blue;">AS</span> tuse <span style="color:Blue;">ON</span>
+        (tuse.COLUMN_NAME = cols.COLUMN_NAME) <span style="color:Blue;">AND</span> (tuse.TABLE_NAME = cols.TABLE_NAME)
+    <span style="color:Blue;">Left</span> <span style="color:Blue;">JOIN</span> INFORMATION_SCHEMA.TABLE_CONSTRAINTS <span style="color:Blue;">AS</span> tcons <span style="color:Blue;">ON</span>
+        (tcons.CONSTRAINT_NAME = tuse.CONSTRAINT_NAME) <span style="color:Blue;">AND</span> (tcons.TABLE_NAME = cols.TABLE_NAME)
+<span style="color:Blue;">WHERE</span> (cols.TABLE_NAME = @Table)
+</pre></div></div><div class="ClearBoth"></div>

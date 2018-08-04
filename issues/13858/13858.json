@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "SeaQuail_PostgreSQL",
+      "DisplayName": "SeaQuail_PostgreSQL"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Need to write an adapter for PostgreSQL",
+    "LastUpdatedDate": "2013-02-14T11:46:39.017-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2010-08-02T16:55:45.823-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "PostgreSQL Support",
+    "Type": {
+      "Name": "Task",
+      "Id": 2
+    },
+    "VoteCount": 1,
+    "Id": 13858
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

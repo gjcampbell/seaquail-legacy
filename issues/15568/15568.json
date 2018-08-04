@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I know this was released only a few days ago,   but i found some bugs or errors, and i will like to report them, ( the script code generated, doesn't work directly,\n \ncomments // need to be in the format /* */ for example,  and when MULTIPLE PRIMARY KEY is used, the syntax is incorrect .\n \nand also have some suggestions.  like Reverse engineering, print the diagram, AUTO organize, option on Script code generation, \n \nas include, drop tables, Storage Engine type, Share the diagram\n \nIMPORTANT, THE CHROME APP, ALLOWS USERS TO SAVE THE DIAGRAM,\n \nbut WHEN I TRIED TO OPEN A DIAGRAM< DOESNT SHOW THE DIAGRAM SAVED A COUPLE OF HOURS AGO, SO I LOOSE SOME COUPLE OF HOURS OF WORK,   i guess i should be fixed soon, or no one is going to put 2 starts on the app.  :)",
+    "LastUpdatedDate": "2013-02-14T11:46:37.543-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2011-03-24T15:25:03.63-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Suggestions for the Chrome App",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 15568
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

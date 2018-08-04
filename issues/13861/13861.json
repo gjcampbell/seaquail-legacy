@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "SeaQuail",
+      "DisplayName": "SeaQuail"
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Decide on what to do about support for transactions. The issue is that MySQL does not support transactions. To not support transactions at all would be awful. Should transaction related calls in a MySQL adapter be ignored or should they throw an error?\n \nAlso, how should transactions be represented?",
+    "LastUpdatedDate": "2013-02-14T11:46:38.607-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "High",
+      "Severity": 150,
+      "Id": 3
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2010-08-02T17:07:27.787-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Transaction Support",
+    "Type": {
+      "Name": "Task",
+      "Id": 2
+    },
+    "VoteCount": 1,
+    "Id": 13861
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Transactions as well as foreign key constraints are supported in MySQL, but only for the InnoDB engine. Should Sea Quail enforce the use of the InnoDB engine to support this?",
+      "PostedDate": "2010-08-11T11:38:12.21-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:46:38.607-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

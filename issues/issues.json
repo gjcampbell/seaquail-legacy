@@ -1,0 +1,66 @@
+[
+  {
+    "Id": 13858,
+    "Title": "PostgreSQL Support"
+  },
+  {
+    "Id": 13860,
+    "Title": "Oracle Support"
+  },
+  {
+    "Id": 13861,
+    "Title": "Transaction Support"
+  },
+  {
+    "Id": 13891,
+    "Title": "Aggregates and Built-in Functions"
+  },
+  {
+    "Id": 13930,
+    "Title": "Simplify Variables"
+  },
+  {
+    "Id": 13967,
+    "Title": "SQLite Support"
+  },
+  {
+    "Id": 13985,
+    "Title": "Exception System"
+  },
+  {
+    "Id": 15568,
+    "Title": "Suggestions for the Chrome App"
+  },
+  {
+    "Id": 16217,
+    "Title": "There no MSBDataSlave project in solution"
+  },
+  {
+    "Id": 18063,
+    "Title": "Page Scroll"
+  },
+  {
+    "Id": 18312,
+    "Title": "Reverse engineering by import SQL script"
+  },
+  {
+    "Id": 19527,
+    "Title": "Group Color Drop-Down not functional"
+  },
+  {
+    "Id": 20020,
+    "Title": "Multiple relationships from one column"
+  },
+  {
+    "Id": 20163,
+    "Title": "AUTO_INCREMENT flag on column needs to be added"
+  },
+  {
+    "Id": 20341,
+    "Title": "Two bugs in DB Diagram Tool"
+  },
+  {
+    "Id": 21701,
+    "Title": "Overview bug on a table that has more columns"
+  }
+]

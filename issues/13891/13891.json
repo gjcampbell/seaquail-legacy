@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Need to support the common aggregates and built-in functions. I'm having trouble imagining how to do this such that making use of these can be done in a concise way.\n \nadapter.Max(\"max param\") ?\n \nor\n \nenum Aggregates { Max, Min, Count, ... }\nadapter.Aggregate(Aggregates.Max, \"max param\")\n \nand via extension method\n \nAggregates.Max(adapter (optional), \"max param\")\nAggregates.Max(\"max param\")",
+    "LastUpdatedDate": "2017-12-08T14:00:15.543-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Medium",
+      "Severity": 100,
+      "Id": 2
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2010-08-03T17:37:34.363-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Aggregates and Built-in Functions",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 13891
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "enum Aggregates { Max, Min, Count, ... }\r\nadapter.Aggregate(Aggregates.Max, \"max param\")\r\n",
+      "PostedDate": "2012-01-13T04:43:30.503-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:46:38.367-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2017-12-08T14:00:15.543-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

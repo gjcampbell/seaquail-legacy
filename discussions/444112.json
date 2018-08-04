@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1045380",
+    "ThreadId": "444112",
+    "Html": "Love the Chrome based DB designer, it's exactly the sort of thing I've been looking for.<br />\n<br />\nI'll second, though, the request for auto_increment support.<br />\n<br />\nAlso, it doesn't seem to handle primary keys that are composed of multiple fields properly.  Each field gets a primary key line, rather than all of them being combined into a single primary key line.<br />\n<br />\nEdit: and, saving diagrams to somewhere else would also be great.  Integrating with Google Drive, or a file-based import/export.<br />\n",
+    "PostedDate": "2013-05-17T19:49:50.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045628",
+    "ThreadId": "444112",
+    "Html": "Small bug report: after manually editing the precision and scale of a DECIMAL field (in the table, not in the field edit breakout) and creating another table, the breaktout box stopped updating itself as I clicked in other fields.  It still worked to edit the currently selected field, but wouldn't change to reflect the current values of that field.<br />\n<br />\nEdit: started working again after I edited the name of a table.<br />\n",
+    "PostedDate": "2013-05-19T05:48:31.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1045643",
+    "ThreadId": "444112",
+    "Html": "Thank you for your feedback and for reporting this bug! FYI, a rewrite is in the works that will address issues such as proper handling of multiple PK's, and I like your idea of interfacing with Google Drive. I'll look into it.<br />\n",
+    "PostedDate": "2013-05-19T06:25:13.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046034",
+    "ThreadId": "444112",
+    "Html": "Looking forward to the next version!<br />\n\r<br />\nA file-based export/import would be very helpful.  I'd like to use this in my database course in the fall.  It's the easiest database design tool I've run across, just the thing for students who are learning database design and don't need all the bells and whistles of a more complex tool.  For students to submit assignments, it'd be great if they could get their designs out to a file that I could then import.<br />\n",
+    "PostedDate": "2013-05-20T07:41:51.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051358",
+    "ThreadId": "444112",
+    "Html": "Another thing I just noticed is the lack of cardinality markers on the relationships.  It hasn't bothered me for my personal projects, but I just realized that for students doing their first database design work, it'd be nice to have the one and many hash marks show automatically based on whether the relationship is between two primary keys or a primary key and non-primary key.<br />\n",
+    "PostedDate": "2013-05-31T13:04:11.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

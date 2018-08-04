@@ -1,0 +1,106 @@
+<div class="wikidoc"><b>2012-05-13</b><br /><br />The database diagram tool has a new domain.<a href="http://diagrams.seaquail.net/">http://diagrams.seaquail.net/</a><br /><br /><br /><b>2011-03-19</b><br /><br />Check out the database diagram tool written for Chrome and the HTML 5 canvas. It generates scripts for a database schema based on the diagrams you set up. It&#39;s only a proof of concept, but it&#39;s fun to play with. <a href="http://www.seaquail.cz.cc/Diagram.aspx">http://www.seaquail.cz.cc/Diagram.aspx</a><br /><br /><br /><b>Project Description</b><br /><br />Sea Quail is a library for building SQL queries using objects in .Net. It&#39;s intended to work with any mainstream RDBMS. Add/remove tables, columns, and foreign keys, insert, update, delete, and select programmatically, without string building. It&#39;s developed in C#.<br /><br /><br /><b>Uses</b>
+<ul><li>Database Agnostic applications</li>
+<li>Data migration between different database management systems</li>
+<li>Scenarios necessitating a dynamically alterable database schema</li>
+<li>Construct Ad Hoc search queries without string building</li></ul>
+<br /><br /><b>Sea Quail Is-</b><br />
+<ul><li>A library for writing SQL queries</li>
+<li>Intended to be used for querying and manipulating the database schema and data</li></ul>
+<br /><br /><b>Sea Quail Is Not-</b><br />
+<ul><li>An O/RM and isn&#39;t intended to be used in place of an O/RM</li>
+<li>A DAL. It&#39;s more like a layer between the DAL and the database</li>
+<li>Thoughtfully named</li></ul>
+<br /><br /><b>History</b><br /><br /><br />Feeling tired of O/RM frameworks for which class definitions were generated based on a database table schema, I was motivated to flip the paradigm and construct the database schema (at runtime) based on the class definitions. I decided that I&#39;d like to try treating the database less like the model or foundation of the project and more like just a means of persisting and searching data. I thought, it&#39;d be cool to just throw whatever I want into the database and have tables set up for it on demand.<br /><br />With this as the goal, the first problem it seemed, would be to find a tool set for manipulating a database schema, and in keeping with the &quot;I don&#39;t care about the DB&quot; philosophy, it should not just work for one RDBMS, but should be flexible enough to work with any of them. I set out looking for this and came back empty-handed. There were proprietary libraries made for a specific RDBMS, most notably SQL Server&#39;s SMO, but I could find nothing that would operate independent of RDBMS.<br /><br />So, generic SQL management and querying tools would have to be developed.<br /><br /><br /><b>Goals</b><br />
+<ul><li>No other library in a solution incorporating this project should have to write SQL. All actual SQL should be generated (and preferably executed) in this library.</li>
+<li>Queries should be built in an OO fashion, and objects should be used to represent the database objects(tables and columns) for their manipulation.</li>
+<li>Support the widely used, powerful RDBMS&#39;s and the greatest of their common capabilities.</li></ul>
+<br /><br /><b>Code Sample</b><br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Green;">//===============================================================</span>
+<span style="color:Green;">// This will demonstrate table creation and record </span>
+<span style="color:Green;">// inserting/selecting</span>
+<span style="color:Green;">//===============================================================</span>
+
+
+<span style="color:Green;">// Instantiate an SQAdapter, and set the connection string. </span>
+<span style="color:Green;">// This adapter will write SQL intended for SQL Server.</span>
+SQLServerAdapter adapter = <span style="color:Blue;">new</span> SQLServerAdapter() 
+{ 
+    ConnectionString = <span style="color:#A31515;">&quot;A SQL Server Connection String&quot;</span> 
+};
+
+<span style="color:Green;">// Check to see if the table, &quot;Song&quot; exists in the database.</span>
+<span style="color:Green;">// If it doesn&#39;t, then create it.</span>
+<span style="color:Blue;">if</span> (adapter.GetTable(<span style="color:#A31515;">&quot;Song&quot;</span>) == <span style="color:Blue;">null</span>)
+{
+    <span style="color:Green;">// Create an SQTable and set the name, then add SQColumns.</span>
+    <span style="color:Green;">// This table will </span>
+    SQTable song = <span style="color:Blue;">new</span> SQTable() { Name = <span style="color:#A31515;">&quot;Song&quot;</span> };
+    song.Columns.AddRange(<span style="color:Blue;">new</span> SQColumn[]
+    {
+        <span style="color:Blue;">new</span> SQColumn() 
+        { 
+            Name = <span style="color:#A31515;">&quot;ID&quot;</span>, 
+            IsIdentity = <span style="color:Blue;">true</span>, 
+            IsPrimary = <span style="color:Blue;">true</span>, 
+            DataType = SQDataTypes.Int64
+        },
+        <span style="color:Blue;">new</span> SQColumn() 
+        { 
+            Name = <span style="color:#A31515;">&quot;Artist&quot;</span>, 
+            DataType = SQDataTypes.String, 
+            Length = 250
+        },
+        <span style="color:Blue;">new</span> SQColumn() 
+        { 
+            Name = <span style="color:#A31515;">&quot;Album&quot;</span>, 
+            DataType = SQDataTypes.String, 
+            Length = 250
+        },
+        <span style="color:Blue;">new</span> SQColumn() 
+        { 
+            Name = <span style="color:#A31515;">&quot;Name&quot;</span>, 
+            DataType = SQDataTypes.String, 
+            Length = 250
+        },
+        <span style="color:Blue;">new</span> SQColumn() 
+        { 
+            Name = <span style="color:#A31515;">&quot;Year&quot;</span>, 
+            DataType = SQDataTypes.Int32
+        },
+    });
+
+    <span style="color:Green;">// Pass the table to the adapter to create it in the database</span>
+    adapter.CreateTable(song);
+}
+
+
+<span style="color:Green;">// Insert data into the table using an SQInsertQuery</span>
+SQInsertQuery insert = <span style="color:Blue;">new</span> SQInsertQuery();
+<span style="color:Green;">// Set the focal table of the insert statement</span>
+insert.PrimaryTable = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Song&quot;</span>);
+<span style="color:Green;">// Set the column/value pairs. For year, I&#39;m passing a variable</span>
+<span style="color:Green;">// to demonstrate paramaterization</span>
+<span style="color:Blue;">string</span> yearVar;
+insert.SetPairs.AddRange(<span style="color:Blue;">new</span> SetQueryPair[]
+{
+    <span style="color:Blue;">new</span> SetQueryPair(<span style="color:#A31515;">&quot;Artist&quot;</span>, <span style="color:#A31515;">&quot;Air&quot;</span>),
+    <span style="color:Blue;">new</span> SetQueryPair(<span style="color:#A31515;">&quot;Name&quot;</span>, <span style="color:#A31515;">&quot;Highschool Lover&quot;</span>),
+    <span style="color:Blue;">new</span> SetQueryPair(<span style="color:#A31515;">&quot;Album&quot;</span>, <span style="color:#A31515;">&quot;The Virgin Suicides&quot;</span>),
+    <span style="color:Blue;">new</span> SetQueryPair(<span style="color:#A31515;">&quot;Year&quot;</span>, yearVar = adapter.CreateVariable(<span style="color:#A31515;">&quot;Year&quot;</span>))
+});
+<span style="color:Green;">// Add the parameter for the year data</span>
+insert.Parameters.Add(<span style="color:Blue;">new</span> SQParameter(yearVar, 1999));
+
+<span style="color:Green;">// Execute the insert statement using the adapter</span>
+adapter.Insert(insert);
+
+
+<span style="color:Green;">// Here&#39;s a select query to demonstrate conditions</span>
+SelectResult res = adapter.Select(<span style="color:Blue;">new</span> SQSelectQuery()
+{
+    Columns = <span style="color:Blue;">new</span> List&lt;SQAliasableObject(<span style="color:#A31515;">&quot;*&quot;</span>),
+    PrimaryTable = <span style="color:Blue;">new</span> SQAliasableObject(<span style="color:#A31515;">&quot;Song&quot;</span>),
+    Condition = <span style="color:Blue;">new</span> SQCondition(<span style="color:#A31515;">&quot;Artist&quot;</span>, RelationOperators.Equal, <span style="color:#A31515;">&quot;Air&quot;</span>)
+        .And(<span style="color:#A31515;">&quot;Name&quot;</span>, RelationOperators.Equal, <span style="color:#A31515;">&quot;Highschool Lover&quot;</span>)
+});
+</pre></div></div><div class="ClearBoth"></div>

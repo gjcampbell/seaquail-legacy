@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When generating a MySql script, I copy and paste into my MySql promt, but it errors out when:\n\n1.  The second line above each table definition (the comment line '-----------------------------...' does not get recognized as a comment, because comments must start with '--' followed by a space.\n\n2. The table definitions do not get applied in the prompt because the last line does not end with a semicolon:\n\")\nENGINE=INNODB\"\n\n Should be:\n\")\nENGINE=INNODB;\"\n\nIf you can make these fixes, it would be much appreciated!\n\nThanks,\nRyan",
+    "LastUpdatedDate": "2014-02-17T09:55:35.997-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2013-10-22T13:55:47.62-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Two bugs in DB Diagram Tool",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 20341
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

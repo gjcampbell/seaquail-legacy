@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I dislike that setting up variables for parameterized SQL in Sea Quail requires so many steps. How can it be made simpler?\n \nFor example:\n// write a variable for later use\nstring varParam1 = Adapter.Instance.CreateVariable(\"param1\");\nnew SQSelectQuery()\n{\n    // use the variable in a condition\n    Condition = new SQCondition(\"Col1\", RelationOperators.Equal, varParam1),\n    // add the variable and its value to the query's list of paramters\n    Parameters = new List<SQParameter>{ new SQParamter(varParam1, \"value\") }\n}\n \nUnless I care what the SQL looks like, then I should not care what the variables are named in the statement. So, why would I want to make a variable having a specific name?\nIdeally, if I'm using a variable in a condition, then the condition ought to be smart enough to tell the query of which it's a part to add the variable to the parameters so that the variable doesn't have to be added manually. \n \nCurrently, condition objects are unaware of the query object of which they are a part. Need to figure out a good way to do this or an alternative way of simplifying this variable/parameter mess.",
+    "LastUpdatedDate": "2013-02-14T11:46:38.173-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2010-08-06T19:41:26.507-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Simplify Variables",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13930
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

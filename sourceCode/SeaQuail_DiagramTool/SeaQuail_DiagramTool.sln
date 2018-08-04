@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail", "..\SeaQuail\SeaQuail.csproj", "{4ACEBF11-A7BB-44CD-A6C2-6CBC9EE1A834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail_SQLite", "..\SeaQuail_SQLite\SeaQuail_SQLite.csproj", "{9F7E285B-941B-475D-BA43-33E461E15ACF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBDataSlave", "..\MSBDataSlave\MSBDataSlave.csproj", "{329DE645-01DD-4028-B43A-66CD3121EB3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail_MySQL", "..\SeaQuail_MySQL\SeaQuail_MySQL.csproj", "{DE39DACC-0BC0-43CC-BAB0-8664B00C19EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail_SQLServer", "..\SeaQuail_SQLServer\SeaQuail_SQLServer.csproj", "{D224E1EE-6ADF-453D-B9F5-F892DBD3B853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail_PostgreSQL", "..\SeaQuail_PostgreSQL\SeaQuail_PostgreSQL.csproj", "{4C4A0BD4-F6CF-4196-84CD-56F807CDF883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail_DiagramTool", "..\SeaQuail_DiagramTool_Auth\SeaQuail_DiagramTool.csproj", "{DAAA6B33-24B4-4F04-B02E-AE1AF31C82EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4ACEBF11-A7BB-44CD-A6C2-6CBC9EE1A834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ACEBF11-A7BB-44CD-A6C2-6CBC9EE1A834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ACEBF11-A7BB-44CD-A6C2-6CBC9EE1A834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ACEBF11-A7BB-44CD-A6C2-6CBC9EE1A834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F7E285B-941B-475D-BA43-33E461E15ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F7E285B-941B-475D-BA43-33E461E15ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F7E285B-941B-475D-BA43-33E461E15ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F7E285B-941B-475D-BA43-33E461E15ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329DE645-01DD-4028-B43A-66CD3121EB3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329DE645-01DD-4028-B43A-66CD3121EB3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329DE645-01DD-4028-B43A-66CD3121EB3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329DE645-01DD-4028-B43A-66CD3121EB3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE39DACC-0BC0-43CC-BAB0-8664B00C19EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE39DACC-0BC0-43CC-BAB0-8664B00C19EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE39DACC-0BC0-43CC-BAB0-8664B00C19EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE39DACC-0BC0-43CC-BAB0-8664B00C19EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D224E1EE-6ADF-453D-B9F5-F892DBD3B853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D224E1EE-6ADF-453D-B9F5-F892DBD3B853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D224E1EE-6ADF-453D-B9F5-F892DBD3B853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D224E1EE-6ADF-453D-B9F5-F892DBD3B853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C4A0BD4-F6CF-4196-84CD-56F807CDF883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C4A0BD4-F6CF-4196-84CD-56F807CDF883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C4A0BD4-F6CF-4196-84CD-56F807CDF883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C4A0BD4-F6CF-4196-84CD-56F807CDF883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAAA6B33-24B4-4F04-B02E-AE1AF31C82EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAAA6B33-24B4-4F04-B02E-AE1AF31C82EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAAA6B33-24B4-4F04-B02E-AE1AF31C82EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAAA6B33-24B4-4F04-B02E-AE1AF31C82EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1070131",
+    "ThreadId": "450510",
+    "Html": "Hi - Love the tool, thank you for it!  Is there a way to add visible blocks of text into the ERD?  Maybe for general comments or otherwise?  Thank you.<br />\n",
+    "PostedDate": "2013-07-18T10:44:20.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360443",
+    "ThreadId": "450510",
+    "Html": "I second this. It would be extremely useful to be able to add comments since the types are so limited. Sure this field is a string, but am I holding an MD5 in it, or possible JSON? Comments would allow us to more clearly represent the diagram without any extra needed logic in the system other than saving an arbitrary string.<br />\n",
+    "PostedDate": "2015-03-06T08:49:54.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

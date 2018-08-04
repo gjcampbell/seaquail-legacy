@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "On my Mac, in the Properties of Group, the Color drop-down menu has only \"Sample Text\" for all of the options, and selecting any of them does not change the color of the selected Group circle. On my PC the colors show up fine.",
+    "LastUpdatedDate": "2013-03-26T11:01:00.43-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2013-03-26T11:01:00.43-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Group Color Drop-Down not functional",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19527
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

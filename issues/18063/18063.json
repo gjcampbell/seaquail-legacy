@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nThe solution is very interesting but one issue which I see is that there is no scrollbar on the page. I tried to use the mouse wheel and it just zooms in or out and the whole page goes haywire. Without this feature it is very difficult to use this.",
+    "LastUpdatedDate": "2014-01-16T22:51:20.563-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2012-05-13T22:13:06.907-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Page Scroll",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 18063
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm considering adding soft scrollbars. \r\n\r\nFor now, you can pan nicely by\r\n - using the overview \r\n - middle mouse dragging",
+      "PostedDate": "2012-05-14T18:17:08.16-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "thanks for your comments but that is only feasible when the tables are part of group. Without that it is not allowing to scroll the page.",
+      "PostedDate": "2012-05-15T23:25:33.657-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Have you tried dragging with the middle mouse button?",
+      "PostedDate": "2012-05-16T03:49:50.477-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-14T11:46:37.217-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I think it will be good to enable dragging with a hand, when clicking not on table or group.",
+      "PostedDate": "2014-01-16T22:51:20.563-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

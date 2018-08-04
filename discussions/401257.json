@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "934252",
+    "ThreadId": "401257",
+    "Html": "\r\n<p>Hello I recently download the source code of your&nbsp;diagram&nbsp;tool but when I tried to compile with Visual Studio 2012 I got some&nbsp;errors&nbsp;and issues; Would you&nbsp;tell me&nbsp;if its&nbsp;possible&nbsp;to made code works on VS 2012 or what\r\n version of VS do you&nbsp;suggest&nbsp;to use?</p>\r\n<p>Thanks in advance</p>\r\n",
+    "PostedDate": "2012-10-30T07:52:48.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "934675",
+    "ThreadId": "401257",
+    "Html": "<p>It was written using VS 2008. It should work in 2012 after the project and stuff is converted. What errors do you get?</p>",
+    "PostedDate": "2012-10-31T04:29:52.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "935549",
+    "ThreadId": "401257",
+    "Html": "<p>Hello again thanks for answer</p>\r\n<p>I got this messages:</p>\r\n<p>Warning<span> </span>1<span> </span>There was a mismatch between the processor architecture of the project being built \"MSIL\" and the processor architecture of the reference \"System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86\", \"x86\". This mismatch may cause runtime failures. Please consider changing the targeted processor architecture of your project through the Configuration Manager so as to align the processor architectures between your project and references, or take a dependency on references with a processor architecture that matches the targeted processor architecture of your project.<span> </span>SeaQuail_SQLite</p>\r\n<p>Error<span> </span>2<span> </span>Source file 'Data\\ORMChildJoinHint.cs' could not be found<span> </span>C:\\seaquial\\MSBDataSlave\\CSC<span> </span>MSBDataSlave</p>\r\n<p>Error<span> </span>3<span> </span>Source file 'Data\\ORMCondSQL.cs' could not be found<span> </span>C:\\seaquial\\MSBDataSlave\\CSC<span> </span>MSBDataSlave</p>\r\n<p>Error<span> </span>4<span> </span>Source file 'Data\\PropertyInfoExtensions.cs' could not be found<span> </span>C:\\seaquial\\MSBDataSlave\\CSC<span> </span>MSBDataSlave</p>\r\n<p>Error<span> </span>5<span> </span>Metadata file 'C:\\seaquial\\MSBDataSlave\\bin\\Debug\\MSBDataSlave.dll' could not be found<span> </span>C:\\seaquial\\SeaQuail_DiagramTool\\CSC<span> </span>SeaQuail_DiagramTool</p>\r\n<p>Can you help me to fix them</p>",
+    "PostedDate": "2012-11-01T21:42:09.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In column properties of the table AUTO_INCREMENT flag would be very helpful.\nI'm trying to move from mysql_workbench to a cloud solution.\nAll my primary keys on the tables are set to auto_increment.\nI cannot reproduce such model in a Sea Qual.\n\nPlease advice,\n\nAlex.",
+    "LastUpdatedDate": "2013-09-01T20:55:51.317-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "seaquail",
+    "ReportedDate": "2013-09-01T17:09:33.753-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AUTO_INCREMENT flag on column needs to be added",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 20163
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The Identity flag is the working equivalent to MySQL's AUTO_INCREMENT. ",
+      "PostedDate": "2013-09-01T20:12:22.87-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thanks,\r\n\r\nThat works.",
+      "PostedDate": "2013-09-01T20:55:51.317-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{329DE645-01DD-4028-B43A-66CD3121EB3B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MSBDataSlave</RootNamespace>
+    <AssemblyName>MSBDataSlave</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Data\InvalidTypeException.cs" />
+    <Compile Include="Data\IPopulateParameters.cs" />
+    <Compile Include="Data\IPopulateProperties.cs" />
+    <Compile Include="Data\ORMChildJoinHint.cs" />
+    <Compile Include="Data\ORMCond.cs" />
+    <Compile Include="Data\ORMCondBase.cs" />
+    <Compile Include="Data\ORMCondGroup.cs" />
+    <Compile Include="Data\ORMCondSQL.cs" />
+    <Compile Include="Data\ORMDataContext.cs" />
+    <Compile Include="Data\ORMPropertyChain.cs" />
+    <Compile Include="Data\ORMSelect.cs" />
+    <Compile Include="Data\PropertyInfoExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema\SchemaColumn.cs" />
+    <Compile Include="Schema\SchemaHintColumn.cs" />
+    <Compile Include="Schema\SchemaHintForeignKey.cs" />
+    <Compile Include="Schema\SchemaManager.cs" />
+    <Compile Include="Schema\SchemaHintTable.cs" />
+    <Compile Include="Schema\SchemaTable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SeaQuail\SeaQuail.csproj">
+      <Project>{4ACEBF11-A7BB-44CD-A6C2-6CBC9EE1A834}</Project>
+      <Name>SeaQuail</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

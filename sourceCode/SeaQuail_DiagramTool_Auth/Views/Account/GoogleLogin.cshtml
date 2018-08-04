@@ -1,0 +1,25 @@
+﻿@using Microsoft.Owin.Security
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("ExternalLogin", "Account", new { }, FormMethod.Post, new { id = "login" }))
+        {
+        @Html.AntiForgeryToken()
+            <input type="hidden" name="provider" value="Google" />
+        }
+        <script type="text/javascript">
+            window.login.submit();
+        </script>
+    </div>
+</body>
+</html>
