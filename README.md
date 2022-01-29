@@ -1,3 +1,3 @@
 # seaquail-legacy
 
-http://diagrams.seaquail.site/
+https://diagrams-seaquail.azurewebsites.net/
