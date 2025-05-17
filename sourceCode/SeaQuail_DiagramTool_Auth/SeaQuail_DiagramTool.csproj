@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -244,50 +246,6 @@
     <Content Include="JavaScript\jquery.json-1.3.min.js" />
     <Content Include="JavaScript\jquery.mousewheel.js" />
     <Content Include="JavaScript\OpenIDPopup.js" />
-    <Content Include="Media\Images\Backgrounds\print-page-bg.png" />
-    <Content Include="Media\Images\Backgrounds\readonly.png" />
-    <Content Include="Media\Images\Backgrounds\toolstrip.png" />
-    <Content Include="Media\Images\Icons\application_side_list.png" />
-    <Content Include="Media\Images\Icons\binocular--arrow.png" />
-    <Content Include="Media\Images\Icons\binocular.png" />
-    <Content Include="Media\Images\Icons\camera.png" />
-    <Content Include="Media\Images\Icons\cross.png" />
-    <Content Include="Media\Images\Icons\delete.png" />
-    <Content Include="Media\Images\Icons\disk.png" />
-    <Content Include="Media\Images\Icons\folder.png" />
-    <Content Include="Media\Images\Icons\folder_camera.png" />
-    <Content Include="Media\Images\Icons\folder_link.png" />
-    <Content Include="Media\Images\Icons\group.png" />
-    <Content Include="Media\Images\Icons\help.png" />
-    <Content Include="Media\Images\Icons\house.png" />
-    <Content Include="Media\Images\Icons\layer-shape-ellipse-add.png" />
-    <Content Include="Media\Images\Icons\layer-shape-ellipse.png" />
-    <Content Include="Media\Images\Icons\logo.png" />
-    <Content Include="Media\Images\Icons\magnifier-left.png" />
-    <Content Include="Media\Images\Icons\magnifier.png" />
-    <Content Include="Media\Images\Icons\magnifier_zoom_in.png" />
-    <Content Include="Media\Images\Icons\magnifier_zoom_out.png" />
-    <Content Include="Media\Images\Icons\minus.png" />
-    <Content Include="Media\Images\Icons\paste_table.png" />
-    <Content Include="Media\Images\Icons\plus.png" />
-    <Content Include="Media\Images\Icons\printer.png" />
-    <Content Include="Media\Images\Icons\script_camera.png" />
-    <Content Include="Media\Images\Icons\script_save.png" />
-    <Content Include="Media\Images\Icons\sitemap.png" />
-    <Content Include="Media\Images\Icons\SSMS\column_add.png" />
-    <Content Include="Media\Images\Icons\SSMS\column_delete.png" />
-    <Content Include="Media\Images\Icons\SSMS\column_insert.png" />
-    <Content Include="Media\Images\Icons\table_add.png" />
-    <Content Include="Media\Images\Icons\table_copy.png" />
-    <Content Include="Media\Images\Icons\table_delete.png" />
-    <Content Include="Media\Images\Icons\table_multiple_add.png" />
-    <Content Include="Media\Images\Icons\table_relationship.png" />
-    <Content Include="Media\Images\Icons\textfield_rename.png" />
-    <Content Include="Media\Images\logo2.png" />
-    <Content Include="Media\Images\logo_128.png" />
-    <Content Include="Media\Stylesheets\CommonDefault.css" />
-    <Content Include="Media\Stylesheets\Diagram.css" />
-    <Content Include="Media\Stylesheets\DiagramPrint.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

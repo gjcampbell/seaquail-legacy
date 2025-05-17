@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link media="screen" rel="Stylesheet" href="/Media/Stylesheets/CommonDefault.css" />
+    <meta name="google-site-verification" content="8RMk3sY9stVUGFmNqgpznxlAhaUH9op_t9nA2MSOKZQ" />
+    @RenderSection("Header")
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    @if (!Context.Request.Path.ToString().Contains("localhost"))
+    {
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4181036-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    }
+</body>
+</html>
