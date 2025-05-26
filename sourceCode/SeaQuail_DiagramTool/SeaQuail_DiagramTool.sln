@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32228.343
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail", "..\SeaQuail\SeaQuail.csproj", "{4ACEBF11-A7BB-44CD-A6C2-6CBC9EE1A834}"
 EndProject
@@ -17,7 +17,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail_PostgreSQL", "..\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail_DiagramTool", "..\SeaQuail_DiagramTool_Auth\SeaQuail_DiagramTool.csproj", "{DAAA6B33-24B4-4F04-B02E-AE1AF31C82EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuailDiagramTool", "SeaQuailDiagramTool\SeaQuailDiagramTool.csproj", "{1D292EAD-4C72-4F7A-8FFA-08DEE1C7ED94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeaQuailDiagramTool", "SeaQuailDiagramTool\SeaQuailDiagramTool.csproj", "{1D292EAD-4C72-4F7A-8FFA-08DEE1C7ED94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureSwa", "AzureSwa", "{16E2D234-4109-4243-9371-427CC540A1AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail.DiagramTool.Host.AzureSwa", "..\SeaQuail.DiagramTool.Host.AzureStaticWebApp\SeaQuail.DiagramTool.Host.AzureSwa.csproj", "{ACEE3367-FCBF-1493-3BEC-B3B9DC99FC52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaQuail.DiagramTool.Domain", "..\SeaQuail.DiagramTool.Application\SeaQuail.DiagramTool.Domain.csproj", "{33067833-1B43-4597-9BA3-4FE0174FC5A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,9 +63,21 @@ Global
 		{1D292EAD-4C72-4F7A-8FFA-08DEE1C7ED94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D292EAD-4C72-4F7A-8FFA-08DEE1C7ED94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D292EAD-4C72-4F7A-8FFA-08DEE1C7ED94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACEE3367-FCBF-1493-3BEC-B3B9DC99FC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACEE3367-FCBF-1493-3BEC-B3B9DC99FC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACEE3367-FCBF-1493-3BEC-B3B9DC99FC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACEE3367-FCBF-1493-3BEC-B3B9DC99FC52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33067833-1B43-4597-9BA3-4FE0174FC5A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33067833-1B43-4597-9BA3-4FE0174FC5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33067833-1B43-4597-9BA3-4FE0174FC5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33067833-1B43-4597-9BA3-4FE0174FC5A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACEE3367-FCBF-1493-3BEC-B3B9DC99FC52} = {16E2D234-4109-4243-9371-427CC540A1AB}
+		{33067833-1B43-4597-9BA3-4FE0174FC5A6} = {16E2D234-4109-4243-9371-427CC540A1AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A949FDCF-CC9C-4386-95E2-D8DBB0E4DE27}

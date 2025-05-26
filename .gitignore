@@ -328,3 +328,4 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/sourceCode/SeaQuail_DiagramTool/SeaQuailDiagramTool/appsettings.Development.json
